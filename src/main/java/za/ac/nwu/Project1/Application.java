@@ -19,5 +19,6 @@ public class Application {
 	public String test(){
 		return "Testing testing 1 2 3";
 	}
+	public String gitTest() { return "Inserted to test GitHub version control"; }
 
 }
