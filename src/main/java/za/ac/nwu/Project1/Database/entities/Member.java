@@ -27,4 +27,26 @@ public class Member {
 
     @Column(name = "Address_ID", nullable = false)
     private Long FKAddressID;
+
+    public Long getMemberID() { return memberID;}
+    public void setMemberID(Long memberID) { this.memberID = memberID; }
+
+    public String getFirstName() { return firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+
+    public String getLastName() { return lastName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
+
+    public Long getContactNumber() { return contactNumber; }
+    public void setContactNumber(Long contactNumber) { this.contactNumber = contactNumber; }
+
+    public String getEmail() { return email; }
+    public void  setEmail(String email) { this.email = email; }
+
+    public Long getFKAccountID() { return FKAccountID; }
+    public void setFKAccountID(Long FKAccountID) { this.FKAccountID = FKAccountID; }
+
+    public Long getFKAddressID() { return FKAddressID; }
+    public void setFKAddressID(Long FKAddressID) { this.FKAddressID = FKAddressID; }
+
 }
