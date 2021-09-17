@@ -11,16 +11,16 @@ public class Member {
     private Long memberID;
 
     @Column(name = "FirstName", nullable = false)
-    private Long firstName;
+    private String firstName;
 
     @Column(name = "Last_Name", nullable = false)
-    private Long lastName;
+    private String lastName;
 
     @Column(name = "Contact_Number", nullable = false)
     private Long contactNumber;
 
     @Column(name = "Email", nullable = false)
-    private Long email;
+    private String email;
 
     @Column(name = "Account_ID", nullable = false)
     private Long FKAccountID;
