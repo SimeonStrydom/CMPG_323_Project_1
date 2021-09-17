@@ -3,6 +3,7 @@ package za.ac.nwu.Project1.Database.entities;
 
 import javax.persistence.*;
 
+@Table(name = "address")
 @Entity
 public class Address {
     @Id
@@ -20,8 +21,17 @@ public class Address {
     private String streetName;
 
     @Column(name = "street_number")
-    private String streetNumber;
+    private Long streetNumber;
 
+    public Address(String cityORTown, String suburb, String streetName, Long streetNumber) {
+        this.cityORTown = cityORTown;
+        this.suburb = suburb;
+        this.streetName = streetName;
+        this.streetNumber =streetNumber;
+    }
+
+    public Address() {
+    }
 
     public Long getAddressID() { return addressID; }
     public void setAddressID(Long addressID) { this.addressID = addressID; }
@@ -35,6 +45,16 @@ public class Address {
     public String getStreetName() { return streetName; }
     public void setStreetName(String streetName) { this.streetName = streetName; }
 
-    public String getStreetNumber() { return streetNumber;    }
-    public void setStreetNumber(String streetNumber) { this.streetNumber = streetNumber;    }
+    public Long getStreetNumber() { return streetNumber;    }
+    public void setStreetNumber(Long streetNumber) { this.streetNumber = streetNumber;    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "(" +
+                "addressID = " + addressID + ", " +
+                "cityORTown = " + cityORTown + ", " +
+                "suburb = " + suburb + ", " +
+                "streetName = " + streetName + ", " +
+                "streetNumber = " + streetNumber + ")";
+    }
 }

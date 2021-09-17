@@ -3,6 +3,7 @@ package za.ac.nwu.Project1.Database.entities;
 
 import javax.persistence.*;
 
+@Table(name = "member")
 @Entity
 public class Member {
     @Id
@@ -28,6 +29,10 @@ public class Member {
     @Column(name = "Address_ID", nullable = false)
     private Long FKAddressID;
 
+    @Column(name = "is_active")
+    private Boolean isActive;
+
+
     public Long getMemberID() { return memberID;}
     public void setMemberID(Long memberID) { this.memberID = memberID; }
 
@@ -49,4 +54,19 @@ public class Member {
     public Long getFKAddressID() { return FKAddressID; }
     public void setFKAddressID(Long FKAddressID) { this.FKAddressID = FKAddressID; }
 
+    public Boolean getIsActive() { return isActive; }
+    public void setIsActive(Boolean isActive) { this.isActive = isActive; }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "(" +
+                "memberID = " + memberID + ", " +
+                "firstName = " + firstName + ", " +
+                "lastName = " + lastName + ", " +
+                "contactNumber = " + contactNumber + ", " +
+                "email = " + email + ", " +
+                "FKAccountID = " + FKAccountID + ", " +
+                "FKAddressID = " + FKAddressID + ", " +
+                "isActive" + isActive + ")";
+    }
 }

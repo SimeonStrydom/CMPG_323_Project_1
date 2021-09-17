@@ -18,4 +18,11 @@ public class Account {
 
    public Long getMiles() { return miles; }
    public void setMiles(Long miles) { this.miles = miles; }
+
+   @Override
+   public String toString() {
+      return getClass().getSimpleName() + "(" +
+              "accountID = " + accountID + ", " +
+              "miles = " + miles + ")";
+   }
 }
