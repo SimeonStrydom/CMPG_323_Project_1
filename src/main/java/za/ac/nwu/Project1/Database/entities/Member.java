@@ -8,28 +8,28 @@ import javax.persistence.*;
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Member_ID", nullable = false)
+    @Column(name = "MemberID", nullable = false)
     private Long memberID;
 
     @Column(name = "FirstName", nullable = false)
     private String firstName;
 
-    @Column(name = "Last_Name", nullable = false)
+    @Column(name = "LastName", nullable = false)
     private String lastName;
 
-    @Column(name = "Contact_Number", nullable = false)
+    @Column(name = "ContactNumber", nullable = false)
     private Long contactNumber;
 
     @Column(name = "Email", nullable = false)
     private String email;
 
-    @Column(name = "Account_ID", nullable = false)
+    @Column(name = "AccountID", nullable = false)
     private Long FKAccountID;
 
-    @Column(name = "Address_ID", nullable = false)
+    @Column(name = "AddressID", nullable = false)
     private Long FKAddressID;
 
-    @Column(name = "is_active")
+    @Column(name = "IsActive", nullable = false)
     private Boolean isActive;
 
 

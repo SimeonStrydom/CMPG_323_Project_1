@@ -11,7 +11,7 @@ public class Address {
     @Column(name = "Address_ID", nullable = false)
     private Long addressID;
 
-    @Column(name = "City_Town")
+    @Column(name = "CityTown")
     private String cityORTown;
 
     @Column(name = "Suburb")
