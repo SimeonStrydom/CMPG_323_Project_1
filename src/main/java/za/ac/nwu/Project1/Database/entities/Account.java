@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Account {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   @Column(name = "", nullable = false)
+   @Column(name = "accountID", nullable = false)
    private Long accountID;
 
    @Column(name = "DiscoveryMiles", nullable = false)

@@ -13,7 +13,7 @@ import javax.transaction.Transactional;
 public interface MemberRepository extends CrudRepository<Member, Long> {
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO Member(FirstName, LastName, ContactNumber, Email, AccountID, AddressID, IsActive VALUES(?1, ?2, ?3, ?4, ?5, ?6, ?7)")
+    @Query(value = "INSERT INTO Member(FirstName, LastName, ContactNumber, Email, AccountID, AddressID, IsActive) VALUES(?1, ?2, ?3, ?4, ?5, ?6, ?7)")
     void addMember(String firstName, String lastName, Long contactNumber, String email, Long FKAccountID, Long FKAddressID, Boolean isActive);
 
     @Transactional
