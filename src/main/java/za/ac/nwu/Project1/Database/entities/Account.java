@@ -2,12 +2,12 @@ package za.ac.nwu.Project1.Database.entities;
 
 import javax.persistence.*;
 
-@Table(name = "account")
+@Table(name = "Account")
 @Entity
 public class Account {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   @Column(name = "accountID", nullable = false)
+   @Column(name = "AccountID", nullable = false)
    private Long accountID;
 
    @Column(name = "DiscoveryMiles", nullable = false)
@@ -22,7 +22,7 @@ public class Account {
    @Override
    public String toString() {
       return getClass().getSimpleName() + "(" +
-              "accountID = " + accountID + ", " +
+              "AccountID = " + accountID + ", " +
               "miles = " + miles + ")";
    }
 }
