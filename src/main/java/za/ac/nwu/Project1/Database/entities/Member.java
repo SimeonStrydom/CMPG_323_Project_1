@@ -32,6 +32,19 @@ public class Member {
     @Column(name = "IsActive", nullable = false)
     private Boolean isActive;
 
+    public Member(Long memberID, String firstName, String lastName, Long contactNumber, String email, Long FKAccountID, Long FKAddressID, Boolean isActive) {
+        this.memberID = memberID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.contactNumber = contactNumber;
+        this.email = email;
+        this.FKAccountID = FKAccountID;
+        this.FKAddressID = FKAddressID;
+        this.isActive = isActive;
+    }
+
+    public Member(){
+    }
 
     public Long getMemberID() { return memberID;}
     public void setMemberID(Long memberID) { this.memberID = memberID; }

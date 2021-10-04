@@ -13,6 +13,14 @@ public class Account {
    @Column(name = "DiscoveryMiles", nullable = false)
    private Long miles;
 
+   public Account(Long accountID, Long miles){
+      this.accountID = accountID;
+      this.miles = miles;
+   }
+
+   public Account(){
+   }
+
    public Long getAccountID() { return accountID; }
    public void setAccountID(Long accountID) { this.accountID = accountID; }
 

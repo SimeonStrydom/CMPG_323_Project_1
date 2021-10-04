@@ -16,7 +16,7 @@ public interface AccountRepository extends CrudRepository<Account, Long> {
 
     @Transactional
     @Query("SELECT Miles FROM Account a WHERE a.AccountID = ?1")
-    Account findMilesById(Long id);                             //? void findMilesById(Long id)
+    void findMilesById(Long id);                             //? void findMilesById(Long id)
 
     @Modifying
     @Transactional

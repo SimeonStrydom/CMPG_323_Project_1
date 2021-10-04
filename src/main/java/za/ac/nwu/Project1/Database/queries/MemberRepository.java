@@ -12,10 +12,10 @@ import javax.transaction.Transactional;
 
 @Repository
 public interface MemberRepository extends CrudRepository<Member, Long> {
-//    @Modifying
-//    @Transactional
-//    @Query(value = "INSERT INTO Member(FirstName, LastName, ContactNumber, Email, AccountID, AddressID, IsActive) VALUES(?, ?, ?, ?, ?, ?, ?)")
-//    void addMember(String firstName, String lastName, Long contactNumber, String email, Long FKAccountID, Long FKAddressID, Boolean isActive);
+    @Modifying
+    @Transactional
+    @Query(value = "INSERT INTO Member(FirstName, LastName, ContactNumber, Email, AccountID, AddressID, IsActive) VALUES(?, ?, ?, ?, ?, ?, ?)")
+    void addMember(String firstName, String lastName, Long contactNumber, String email, Long FKAccountID, Long FKAddressID, Boolean isActive);
 
 
     @Transactional
