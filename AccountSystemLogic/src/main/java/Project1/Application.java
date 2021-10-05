@@ -19,13 +19,13 @@ public class Application {
 	@Autowired
 	public AccountRepository accountRepository;
 	@GetMapping("/addAccount")
-	public void addAccount(){
-		accountRepository.insertAccount(0);
+	public void addAccount(@RequestParam Long miles){
+		AccountRepository.insertAccount(miles);
 	}
 
 	@GetMapping("/viewMiles")
-	public String viewMiles(@RequestParam Long id) {
-		return "Your current balance is" + accountRepository.findMilesById(id) + "miles.";
+	public Long viewMiles(@RequestParam Long id) {
+		return accountRepository.findMilesById(id);
 	}
 
 	@GetMapping("/addMiles")

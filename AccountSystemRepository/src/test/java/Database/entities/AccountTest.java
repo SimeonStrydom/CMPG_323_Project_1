@@ -11,7 +11,7 @@ class AccountTest {
 
     @BeforeEach
     void setUp() {
-        //testClass = new testClass(null);
+        testClass = new Account();
     }
 
     @AfterEach
@@ -21,7 +21,7 @@ class AccountTest {
 
     @Test
     void getAccountID() {
-
+        assertEquals(1L, 1L);
     }
 
     @Test
@@ -30,13 +30,12 @@ class AccountTest {
 
     @Test
     void getMiles() {
+        assertEquals(100L, 100L);
     }
 
     @Test
     void setMiles() {
     }
 
-    @Test
-    void testToString() {
-    }
+
 }
