@@ -1,10 +1,10 @@
-package za.ac.nwu.Project1.Database.queries;
+package Database.queries;
 
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import za.ac.nwu.Project1.Database.entities.Address;
+import Database.entities.Address;
 
 import javax.transaction.Transactional;
 

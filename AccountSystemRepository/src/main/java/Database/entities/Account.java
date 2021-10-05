@@ -1,4 +1,4 @@
-package za.ac.nwu.Project1.Database.entities;
+package Database.entities;
 
 import javax.persistence.*;
 
