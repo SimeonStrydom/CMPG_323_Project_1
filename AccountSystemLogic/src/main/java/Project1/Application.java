@@ -1,9 +1,11 @@
 package Project1;
 
+import Database.queries.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
@@ -15,6 +17,29 @@ public class Application {
 	}
 
 	@Autowired
+	public AccountRepository accountRepository;
+	@GetMapping("/addAccount")
+	public void addAccount(){
+		accountRepository.insertAccount(0);
+	}
+
+	@GetMapping("/viewMiles")
+	public String viewMiles(@RequestParam Long id) {
+		return "Your current balance is" + accountRepository.findMilesById(id) + "miles.";
+	}
+
+	@GetMapping("/addMiles")
+	public String addMiles(@RequestParam(defaultValue = "No ID") Long id, @RequestParam(defaultValue = "No miles to add") Long newMiles){
+		accountRepository.updateMiles(id,accountRepository.findMilesById(id)+newMiles);
+		return newMiles + " miles where added to your account. Your new balance is: " + accountRepository.findMilesById(id);
+	}
+
+	@GetMapping("/subtractMiles")
+	public String subtractMiles(@RequestParam(defaultValue = "No ID") Long id, @RequestParam(defaultValue = "No miles to subtract") Long newMiles) {
+		accountRepository.updateMiles(id,accountRepository.findMilesById(id)-newMiles);
+		return newMiles + " miles where deducted from your account. Your new balance is: " + accountRepository.findMilesById(id);
+	}
+
 	@GetMapping("/Hello")
 	public String test(){
 		return "Testing testing 1 2 3";
