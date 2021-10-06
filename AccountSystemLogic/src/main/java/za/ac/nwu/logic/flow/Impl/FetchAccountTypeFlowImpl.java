@@ -5,6 +5,7 @@ import dto.AccountTypeDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.logic.flow.FetchAccountTypeFlow;
+import za.ac.nwu.translator.AccountTypeTranslator;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -23,6 +24,6 @@ public class FetchAccountTypeFlowImpl implements FetchAccountTypeFlow {
 
     @Override
     public List<AccountTypeDto> getAllAccountTypes() {
-        return accountTypeTranslator.getAllAccountTyps();
+        return accountTypeTranslator.getAllAccountTypes();
     }
 }
