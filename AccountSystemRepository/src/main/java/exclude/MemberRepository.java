@@ -1,6 +1,6 @@
-package Database.queries;
+package exclude;
 
-import Database.entities.Member;
+import Database.entities.exclude.Member;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
