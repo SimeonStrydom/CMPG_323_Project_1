@@ -1,6 +1,6 @@
 package Database.queries;
 
-import entities.Account;
+import entities.exclude.Account;
 import Database.entities.RepositoryTestConfig;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

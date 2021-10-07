@@ -1,4 +1,4 @@
-package entities;
+package entities.exclude;
 
 import javax.persistence.*;
 
