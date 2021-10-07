@@ -56,7 +56,7 @@ public class AccountTypeController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @GetMapping("{mnemonic}")
+    @GetMapping("/{mnemonic}")
     @ApiOperation(value = "Fetches specific AccountType.", notes = "Returns the AccountType corresponding to given mnemonic")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Account types returned", response = GeneralResponse.class),
@@ -71,5 +71,5 @@ public class AccountTypeController {
             @PathVariable("mnemonic") final String mnemonic) {
         AccountTypeDto accountTypes = fetchAccountTypeFlow.getAccountTypeByMnemonic(mnemonic);
         GeneralResponse<AccountTypeDto> response = new GeneralResponse(true, accountTypes);
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);}
 }

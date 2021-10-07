@@ -1,13 +1,35 @@
 package za.ac.nwu.translator;
 
+import Database.queries.AccountTypeRepository;
 import dto.AccountTypeDto;
 import entities.AccountType;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AccountTypeTranslatorImpl {
 
+    private final AccountTypeRepository accountTypeRepository;
 
+    @Autowired
+    public AccountTypeTranslatorImpl(AccountTypeRepository accountTypeRepository) {
+        this.accountTypeRepository = accountTypeRepository;
+    }
 
-
+    @Override
+    public List<AccountTypeDto> getAllAccountTypes() {
+        List<AccountTypeDto> accountTypeDtos = new ArrayList<>();
+        try {
+            for (AccountType accountType : AccountTypeRepository.findAll()) {
+                accountTypeDtos.add(new AccountTypeDto(accountType));
+            }
+        }
+        catch (Exception e) {
+            throw new RuntimeException("Unable to run from DB", e);
+        }
+        return accountTypeDtos;
+    }
 
     @Override
     public AccountTypeDto create(AccountTypeDto accountTypeDto) {
@@ -33,7 +55,7 @@ public class AccountTypeTranslatorImpl {
     @Override
     public AccountTypeDto getAccountTypeByMnemonic(String mnemonic) {
         try {
-            AccountType accountType = accountTypeRepository.getAccountTypeByMnemonicNativeQuery(mnemonic);
+            AccountType accountType = accountTypeRepository.getAccountTypeByMnemonic(mnemonic);
             return new AccountTypeDto(accountType);
         } catch (Exception e) {
             throw new RuntimeException("Unable to read from DB", e);

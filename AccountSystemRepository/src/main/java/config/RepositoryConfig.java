@@ -1,4 +1,4 @@
-package entities;
+package config;
 
 
 import org.springframework.beans.factory.annotation.Value;
@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("za.ac.nwu.Database.queries")
-@EntityScan("za.ac.nwu.domain.queries")
+@EntityScan("za.ac.nwu.domain.entities")
 @PropertySource(value = "classpath:application.properties")
 public class RepositoryConfig {
 
